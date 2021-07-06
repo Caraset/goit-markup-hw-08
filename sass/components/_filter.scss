@@ -1,0 +1,10 @@
+// список фильтр для портфолио
+.filter__list {
+  justify-content: center;
+  display: flex;
+}
+
+// отступы между кнопками фильтра
+.filter__list-item:not(:last-child) {
+  margin-right: 8px;
+}

@@ -1,0 +1,34 @@
+//  === СЕКЦИЯ "ЧЕМ МЫ ЗАНИМАЕМСЯ" ===
+
+// состоит из трех картинок с названиями, названия позиционированием поставлены поверх картинок
+
+// кастомный падинг сверху потому что с стандартным падингом 94px слишком большой отступ свехру
+.services {
+  padding-top: 47px;
+}
+
+// кастомные стили для заголовков услуг
+.services__title-t3 {
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $third-text-color;
+}
+
+// контейнер с картинкой и названием в котором позиционируется название поверх картинки
+.service-content {
+  position: relative;
+}
+
+// стиль для контейнера с названием + его позиционирование поверх картинки
+.service-content__description-container {
+  position: absolute;
+  bottom: 0;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  width: 100%;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}

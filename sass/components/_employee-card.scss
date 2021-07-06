@@ -1,0 +1,75 @@
+// карточка с фотографией, именем, ссылками на соц. сети сотрудника
+.employee-card {
+  display: inline-block;
+  padding-bottom: 30px;
+
+  border-radius: 4px;
+
+  text-align: center;
+
+  background-color: $main-bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+// отступ между фотографией и именем
+.employee-card__img {
+  margin-bottom: 30px;
+}
+
+// имя сотрудника
+.employee-card__title-t3 {
+  margin-bottom: 10px;
+
+  font-size: 16px;
+}
+
+// кастомный стиль должности сотрудника
+.employee-card__position {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+// список ссылок на соц. сети сотрудника, оформлены в виде подсвечиваемых кнопок с лого соц. сети
+.employee-socials-list {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 10px;
+
+  display: flex;
+}
+
+// отступы между ссылками(кнопками) соц. сетей
+.employee-socials-list__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+// ссылка(кнопка с логотипом) соц.
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  transition-property: background-color;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+
+  &:hover &__icon {
+    fill: $main-bg-color;
+  }
+}
+
+// иконка для ссылки соц. сети
+.social-link__icon {
+  fill: $social-link-main-color;
+
+  transition-property: fill;
+}

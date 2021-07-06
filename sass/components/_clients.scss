@@ -1,0 +1,27 @@
+// === СЕКЦИЯ "СПИСОК КЛИЕНТОВ" ===
+
+// горизонтальное позиционирование иконок клиентов
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+// иконка клиента
+.client-logo__icon {
+  border: solid 1px $social-link-main-color;
+  border-radius: 4px;
+
+  fill: $social-link-main-color;
+
+  transition-property: fill, border;
+}
+
+// смена цвета иконки и границы при ховере/фокусе
+.client-logo__link {
+  &:hover .client-logo__icon,
+  &:focus .client-logo__icon {
+    fill: $accent-color;
+
+    border: solid 1px $accent-color;
+  }
+}

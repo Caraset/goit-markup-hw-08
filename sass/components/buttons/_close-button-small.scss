@@ -1,0 +1,25 @@
+// маленькая, круглая кнопка с крестиком для закрытия чего-либо, универсальна
+.btn-close {
+  padding: 6px;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid $border-color;
+  border-radius: 50%;
+
+  background-color: $main-bg-color;
+
+  transition-property: fill;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    fill: $accent-color;
+  }
+}

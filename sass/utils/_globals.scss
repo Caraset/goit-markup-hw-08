@@ -1,0 +1,61 @@
+// контейнер для ограничения контента
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 1200px;
+}
+
+// все буквы верхний регистр
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* секция(падинги) */
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+// флекс для элементов + выравнивание по нижней линии текста
+.flex {
+  display: flex;
+  align-items: baseline;
+}
+
+// флекс для элементов + расположение элементов с растоянием между ними
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// общие характеристики "анимации"
+.transition {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// спрятать ненужные элементы
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+// общие свойства для всей страницы
+body {
+  font-family: $main-font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+
+  color: $main-text-color;
+  background-color: $main-bg-color;
+}

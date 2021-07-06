@@ -1,0 +1,115 @@
+// === ХЕДЕР ===
+.header {
+  border-bottom: 1px solid $border-color;
+
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+// марджин логотипа только в хедере для отступа от меню навигации
+.header__logo {
+  margin-right: 93px;
+}
+
+// сдвиг контактной информации в хедере к левому краю контейнера и превращение в флекс элемент для расположения 2-х элементов списка горизонтально
+.header__contacts {
+  margin-left: auto;
+
+  display: flex;
+}
+
+// оформление контактов в хедере + смена цвета текста и иконки рядом при ховере/фокусе (ссылки на имейл и номер)
+.header__contacts-link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  display: flex;
+  align-items: center;
+
+  color: $main-text-color;
+
+  transition-property: color;
+}
+
+.header__contacts-link {
+  &:hover,
+  &:focus,
+  &:hover .header__contacts-icon,
+  &:focus .header__contacts-icon {
+    fill: $accent-color;
+
+    color: $accent-color;
+  }
+}
+
+// иконки конверт и смартфон рядом с ссылками контактами в хедере
+.header__contacts-icon {
+  margin-right: 10px;
+
+  fill: $main-text-color;
+
+  transition-property: fill;
+}
+
+// отдельный контейнер для позиционирования всех элементов в хедере горизонтально при помощи флекса
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// навигация по сайту, позиционирование горизонтально
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.navigation__list {
+  @extend .navigation;
+}
+
+.navigation__list-item {
+  position: relative;
+}
+
+// отступы между элементами списков навигации и контактов в хедере
+.navigation__list-item:not(:last-child),
+.header__contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+// оформление ссылок(кнопок) навигации, статично + при ховере/фокусе смена цвета
+.navigation__link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  display: block;
+
+  color: $secondary-text-color;
+
+  transition-property: color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+// отдельный класс для подсвечивания + нижнего подчеркивания на ссылку в навигации которая соответствует открытой странице
+.is-current {
+  color: $accent-color;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 2px;
+
+    background-color: $accent-color;
+  }
+}
