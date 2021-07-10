@@ -1,27 +1,61 @@
 // === СЕКЦИЯ "СПИСОК КЛИЕНТОВ" ===
 
-// горизонтальное позиционирование иконок клиентов
-.clients-list {
-  display: flex;
-  justify-content: space-between;
+.clients {
+  & .title-t2 {
+    margin-bottom: 30px;
+  }
 }
 
 // иконка клиента
 .client-logo__icon {
-  border: solid 1px $social-link-main-color;
-  border-radius: 4px;
-
   fill: $social-link-main-color;
 
   transition-property: fill, border;
 }
 
+.clients-list {
+  margin-top: -30px;
+  margin-left: -30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients-list__item {
+  margin-top: 30px;
+  margin-left: 30px;
+  flex-basis: calc(100% / 2 - 30px);
+
+  @media screen and (min-width: $second-bp) {
+    flex-basis: calc(100% / 3 - 30px);
+  }
+
+  @media screen and (min-width: $third-bp) {
+    flex-basis: calc(100% / 6 - 30px);
+  }
+}
+
+.client-logo__icon {
+  border: none;
+}
+
 // смена цвета иконки и границы при ховере/фокусе
 .client-logo__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 92px;
+
+  border: solid 1px $social-link-main-color;
+  border-radius: 4px;
+
   &:hover .client-logo__icon,
   &:focus .client-logo__icon {
     fill: $accent-color;
+  }
 
+  &:hover,
+  &:focus {
     border: solid 1px $accent-color;
   }
 }

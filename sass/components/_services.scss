@@ -1,10 +1,20 @@
-//  === СЕКЦИЯ "ЧЕМ МЫ ЗАНИМАЕМСЯ" ===
-
-// состоит из трех картинок с названиями, названия позиционированием поставлены поверх картинок
-
-// кастомный падинг сверху потому что с стандартным падингом 94px слишком большой отступ свехру
 .services {
   padding-top: 47px;
+
+  display: none;
+
+  @media screen and (min-width: $third-bp) {
+    display: block;
+  }
+}
+
+.services__title-t2 {
+  margin-bottom: 50px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 // кастомные стили для заголовков услуг

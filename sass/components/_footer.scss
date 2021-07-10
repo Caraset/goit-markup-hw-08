@@ -2,15 +2,29 @@
 
 // внутрение отступы футера + фоновый цвет
 .footer {
+  text-align: center;
   padding-top: 60px;
   padding-bottom: 60px;
 
   background-color: $secondary-bg-color;
+
+  @media screen and (min-width: $third-bp) {
+    text-align: left;
+  }
 }
 
-// отступ от секции с контактами
-.footer__contacts {
-  margin-right: 83px;
+.footer__container {
+  @media screen and (min-width: $second-bp) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 
 // кастомные свойства для логотипа в футере
@@ -20,16 +34,6 @@
   display: inline-block;
 
   color: $third-text-color;
-}
-
-// отступы между контактами в футере + кастомный стиль для ссылки на физ. адрес
-.address__list-item {
-  &:not(:last-child) {
-    margin-bottom: 9px;
-  }
-  &:first-child .address__link {
-    color: $third-text-color;
-  }
 }
 
 // стиль для ссылок раздела адрес в футере
@@ -44,6 +48,16 @@
   }
 }
 
+// отступы между контактами в футере + кастомный стиль для ссылки на физ. адрес
+.address__list-item {
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+  &:first-child .address__link {
+    color: $third-text-color;
+  }
+}
+
 // заголовки "призывы" в футере
 .footer__title {
   margin-bottom: 20px;
@@ -55,12 +69,39 @@
   color: $third-text-color;
 }
 
+.company-socials,
+.footer__contacts {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: calc(100% / 2);
+
+  @media screen and (min-width: $third-bp) {
+    flex-grow: 0;
+    flex-basis: initial;
+  }
+}
+
+// отступ от секции с контактами
 // отступ между списком ссылок на соц. страницы компании и подпиской на спам
+.footer__contacts,
 .footer__company-socials {
-  margin-right: 93px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $third-bp) {
+    margin-bottom: 0;
+  }
 }
 
 // отступы между ссылками(кнопками) на страницы в соц. сетях компании в футере
+.company-socials__list {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: $third-bp) {
+    justify-content: left;
+  }
+}
+
 .company-socials__item:not(:last-child) {
   margin-right: 10px;
 }
@@ -85,17 +126,38 @@
   }
 }
 
+.spam-trap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  @media screen and (min-width: $third-bp) {
+    flex-grow: 0;
+  }
+}
+
 // цвет иконок соц. сетей в футере
 .company-socials__icon {
   fill: #ffffff;
 }
 
+.subscribe-form {
+  @media screen and (min-width: $third-bp) {
+    display: flex;
+  }
+}
+
 // стиль поля ввода имейла для подписки на рассылку
 .subscribe-form__input {
-  margin-right: 12px;
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
   padding-left: 16px;
   padding-right: 16px;
-  width: 358px;
+  width: 100%;
+  max-width: 480px;
   height: 50px;
 
   color: $third-text-color;
@@ -103,23 +165,25 @@
   background-color: $secondary-bg-color;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-}
 
-// кастомные свойства для кнопки подписки на рассылку в футере
-.footer__button {
-  padding: 10px 29px;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 12px;
+    margin-left: 0;
+    margin-bottom: 0;
 
-  display: flex;
-  align-items: center;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    background-color: $secondary-accent-color;
+    width: 358px;
+    max-width: none;
   }
 }
 
-// отсутп иконки и текста в кнопке в футере
+.footer__button {
+  padding: 10px 29px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
 .footer__button-icon {
   margin-left: 10px;
 }

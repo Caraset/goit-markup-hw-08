@@ -1,10 +1,15 @@
 // список фильтр для портфолио
 .filter__list {
-  justify-content: center;
   display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $second-bp) {
+    justify-content: center;
+  }
 }
 
 // отступы между кнопками фильтра
-.filter__list-item:not(:last-child) {
-  margin-right: 8px;
+.filter__list-item {
+  margin-top: 15px;
+  margin-left: 8px;
 }

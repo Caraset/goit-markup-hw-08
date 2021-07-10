@@ -1,47 +1,52 @@
 // сброс стилей от браузера
-@import './base/reset';
+@import "./base/reset";
 
 // глобальные утилиты для всего сайта
-@import './utils/variables';
-@import './utils/globals';
-@import './utils/titles';
+@import "./utils/variables";
+@import "./utils/globals";
+@import "./utils/titles";
+@import "./components/container";
 
 // глобальные кнопки
-@import './components/buttons/button';
-@import './components/buttons/filter-button';
-@import './components/buttons/close-button-small';
+@import "./components/buttons/button";
+@import "./components/buttons/filter-button";
+@import "./components/buttons/close-button-small";
 
 // лого
-@import './components/logo';
+@import "./components/logo";
 
 // хедер
-@import './components/header';
+@import "./components/header";
+
+// мобильное меню для навигации
+@import "./components/mobile-menu";
 
 // футер
-@import './components/footer';
+@import "./components/footer";
 
 // секция героя
-@import './components/hero';
+@import "./components/hero";
 
 // секция особенности
-@import './components/features';
+@import "./components/features";
 
 // секция услуги
-@import './components/services';
+@import "./components/services";
 
 // секция наша команда
-@import './components/team';
+@import "./components/team";
 
 // секция клиенты
-@import './components/clients';
-@import './components/employee-card';
+@import "./components/clients";
+@import "./components/employee-card";
 
 // секция портфолио
-@import './components/portfolio';
+@import "./components/portfolio";
 
 // фильтр для портфолио
-@import './components/filter';
-@import './components/portfolio-card';
+@import "./components/filter";
+@import "./components/portfolio-card";
 
 // модальное окно
-@import './components/modal-window';
+@import "./components/backdrop";
+@import "./components/modal-window";

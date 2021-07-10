@@ -7,22 +7,91 @@
   letter-spacing: 0.02em;
 }
 
-// марджин логотипа только в хедере для отступа от меню навигации
 .header__logo {
-  margin-right: 93px;
+  margin-right: 88px;
 }
 
-// сдвиг контактной информации в хедере к левому краю контейнера и превращение в флекс элемент для расположения 2-х элементов списка горизонтально
-.header__contacts {
-  margin-left: auto;
+.header-container {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
 
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: $second-bp) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// навигация по сайту, позиционирование горизонтально
+.navigation {
+  display: flex;
+  align-items: baseline;
+
+  @media screen and (min-width: $third-bp) {
+    align-items: center;
+  }
+}
+
+.navigation__list {
+  @extend .navigation;
+  width: 294px;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navigation__list-item {
+  position: relative;
+
+  // &:not(:last-child) {
+  // }
+}
+
+// оформление ссылок(кнопок) навигации, статично + при ховере/фокусе смена цвета
+.navigation__link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  display: block;
+
+  color: $secondary-text-color;
+
+  transition-property: color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+// спрятаны на мобильном, заменены открывающимся меню
+.header__contacts {
+  display: none;
+
+  margin-top: -10px;
+  margin-left: -30px;
+
+  @media screen and (min-width: $second-bp) {
+    display: block;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    display: flex;
+  }
 }
 
 // оформление контактов в хедере + смена цвета текста и иконки рядом при ховере/фокусе (ссылки на имейл и номер)
 .header__contacts-link {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  // padding-top: 32px;
+  // padding-bottom: 32px;
 
   display: flex;
   align-items: center;
@@ -30,6 +99,17 @@
   color: $main-text-color;
 
   transition-property: color;
+}
+
+.header__contacts-item {
+  margin-top: 10px;
+  margin-left: 30px;
+
+  &:not(:last-child) {
+    @media screen and (min-width: $third-bp) {
+      margin-right: 20px;
+    }
+  }
 }
 
 .header__contacts-link {
@@ -52,46 +132,17 @@
   transition-property: fill;
 }
 
-// отдельный контейнер для позиционирования всех элементов в хедере горизонтально при помощи флекса
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-// навигация по сайту, позиционирование горизонтально
-.navigation {
-  display: flex;
-  align-items: center;
-}
-.navigation__list {
-  @extend .navigation;
-}
-
-.navigation__list-item {
-  position: relative;
-}
-
-// отступы между элементами списков навигации и контактов в хедере
-.navigation__list-item:not(:last-child),
-.header__contacts-item:not(:last-child) {
-  margin-right: 50px;
-}
-
-// оформление ссылок(кнопок) навигации, статично + при ховере/фокусе смена цвета
-.navigation__link {
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  display: block;
-
-  color: $secondary-text-color;
-
-  transition-property: color;
+.menu-open-btn {
+  background: none;
+  border: none;
 
   &:hover,
   &:focus {
-    color: $accent-color;
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: $second-bp) {
+    display: none;
   }
 }
 
@@ -99,17 +150,19 @@
 .is-current {
   color: $accent-color;
 
-  &::after {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
+  @media screen and (min-width: $second-bp) {
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
 
-    width: 100%;
-    height: 4px;
+      width: 100%;
+      height: 4px;
 
-    border-radius: 2px;
+      border-radius: 2px;
 
-    background-color: $accent-color;
+      background-color: $accent-color;
+    }
   }
 }

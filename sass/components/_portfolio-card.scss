@@ -2,7 +2,7 @@
 
 // ссылка карточки для ридеректа куда-то
 .card__link {
-  display: block;
+  display: inline-block;
 
   color: inherit;
 
@@ -12,6 +12,10 @@
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
       1px 4px 6px rgba(0, 0, 0, 0.16);
   }
+}
+
+.card__img {
+  width: 100%;
 }
 
 // название продукта в карточке
@@ -32,10 +36,13 @@
 
 // скрытый блок с описанием, выезжает при ховере карточки
 .card__description {
+  padding: 15px 24px 0 24px;
   position: absolute;
   overflow-x: auto;
 
-  padding: 63px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 100%;
   height: 100%;
@@ -43,7 +50,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 1.56;
-  text-align: left;
+  // text-align: left;
 
   color: $third-text-color;
   background-color: rgba(33, 150, 243, 0.9);
@@ -54,12 +61,13 @@
 // при ховере карточки (ссылка обхватывает всю область карточки и только ссылка может быть объектом фокуса) выезжает блок с описанием
 .card__link:hover .card__description,
 .card__link:focus .card__description {
-  transform: translateY(-294px);
+  transform: translateY(-100%);
 }
 
 // нижняя часть карточки с названием карточки и значением для фильтра
 .card__bottom {
   padding: 24px 20px;
+  padding-right: 0;
 
   text-align: left;
   font-size: 16px;

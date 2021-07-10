@@ -3,4 +3,36 @@
 // меняет фон секции
 .team {
   background-color: $third-bg-color;
+
+  .title-t2 {
+    margin-bottom: 30px;
+  }
+}
+
+// .team-list__item:not(:last-child) {
+//   margin-bottom: 30px;
+// }
+
+.team-list {
+  margin-top: -30px;
+  margin-left: -30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-list__item {
+  margin-top: 30px;
+  margin-left: 30px;
+
+  max-width: calc(100% / 1 - 30px);
+
+  @media screen and (min-width: $second-bp) {
+    max-width: calc(100% / 2 - 30px);
+  }
+
+  @media screen and (min-width: $third-bp) {
+    max-width: calc(100% / 4 - 30px);
+  }
 }

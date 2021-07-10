@@ -1,0 +1,15 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $first-bp) {
+    max-width: $second-bp;
+  }
+
+  @media screen and (min-width: $second-bp) {
+    max-width: $third-bp;
+  }
+}
